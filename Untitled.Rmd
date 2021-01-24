@@ -1,0 +1,51 @@
+---
+title: "purrr"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(purrr)
+library(dplyr)
+```
+# Atomic Types
+```{r}
+# double
+1
+
+# character
+'a'
+```
+
+# Vectors 
+```{r}
+vector_double <- c(1:5)
+vector_character <- c('a', 'b', 'c', 'd', 'e')
+```
+
+# Tables
+```{r}
+table_one <- data.frame(
+  doubles = vector_double,
+  characters = vector_character
+)
+```
+
+```{r}
+table_two <- dplyr::as_tibble(table_one)
+```
+
+```{r}
+table_three <- 
+  mutate(
+    table_two,
+    doubles_doubled = doubles * 2
+  )
+```
+
+```{r}
+
+```

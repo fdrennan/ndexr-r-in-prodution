@@ -1,0 +1,54 @@
+---
+title: "purrr"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(purrr)
+library(dplyr)
+```
+# Atomic Types
+```{r}
+# integer
+1
+
+# character
+'a'
+```
+
+# Vectors 
+```{r}
+vector_integer <- c(1:5)
+vector_character <- c('a', 'b', 'c', 'd', 'e')
+vector_logical <- rep(c(TRUE, FALSE), 5)
+```
+
+# Tables
+```{r}
+table_dataframe <- data.frame(
+  integers = vector_integer,
+  characters = vector_character,
+  booleans = vector_logical
+)
+```
+
+```{r}
+list_example <- list(
+  vector_integer = vector_integer,
+  vector_character = vector_character,
+  vector_logical = vector_logical,
+  table_dataframe = table_dataframe
+)
+```
+
+
+```{r}
+map(list_example, ~ class)
+map_chr(list_example, class)
+```
